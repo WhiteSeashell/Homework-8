@@ -14,7 +14,14 @@ public class ContactList {
         ContactList.contacts.add(contact);
     }
 
+    public static void addAllContacts(ArrayList<Contact> contacts) {
+        ContactList.contacts.addAll(contacts);
+    }
     public static void deleteContact(Contact contact){
         ContactList.contacts.remove(contact);
+    }
+
+    public static void clear(){
+        ContactList.contacts.clear();
     }
 }

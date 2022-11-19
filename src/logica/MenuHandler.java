@@ -14,12 +14,14 @@ public class MenuHandler {
 
     public static void removeContact(Contact u){
         ContactList.deleteContact(u);
+        Main.updateExternalData();
     }
 
     public static void editContact(Contact u, String name, String id, boolean isCustumer){
         u.setName(name);
         u.setId(id);
         u.setClient(isCustumer);
+        Main.updateExternalData();
     }
 
     public static Contact getContact(String number){
@@ -49,6 +51,7 @@ public class MenuHandler {
     public static boolean createContact(String[] info){
         if(!validar(info[1])){return false;}
         ContactList.addContacts(new Contact(info[0], info[1], info[2], Boolean.parseBoolean(info[3])));
+        Main.updateExternalData();
         return true;
         //the contact was created successfully
 
